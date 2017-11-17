@@ -29,7 +29,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     background-color: #ffffff;
     color: #333333;
@@ -72,7 +72,7 @@ p {
 .large-header {
 	position: relative;
 	width: 100%;
-    height: 55vh;
+    height: 65vh;
     margin-bottom: 2.5rem;
     background: #1D1E1F;
 	overflow: hidden;
@@ -83,7 +83,7 @@ p {
 }
 
 .main-title {
-	position: absolute;
+	position: absolute;    
 	margin: 0;
 	padding: 0;
 	color: #f9f1e9;
@@ -105,7 +105,7 @@ p {
 	height: 20vw;
 	min-width: 3.5rem;
 	min-height: 3.5rem;
-	background: url(../img/deco.svg) no-repeat center center;
+    background: url(../img/svg/deco.svg) no-repeat center center;
 	background-size: cover;
 	position: absolute;
 	top: 50%;
@@ -427,19 +427,19 @@ footer {
     list-style: none;
     padding: 20px;
     padding-bottom: 60px;
-    font-size: 0; 
 }
 
 .social-links__item {
     display: inline-block;
-    vertical-align: baseline;
-    width: 50px;
-    height: 50px;
+    vertical-align: baseline;    
     margin-right: 20px; 
 }
 
 .social-links__item a {
+    width: 40px;
+    height: 40px;
     text-decoration: none;
+    background-color: #D32512;
 }
 
 .social-links__item:last-child {
@@ -447,16 +447,45 @@ footer {
 }
 
 .social-links__link--github {
-    font-size: 0;
-    background-image: url(../img/github.svg);
+    background-image: url(../img/svg/github.svg);
     background-position: center center;
     background-repeat: no-repeat;
 }
 
+.social-links__link--geektimes {
+    background-image: url(../img/svg/geektimes.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.social-links__link--habrahabr {
+    background-image: url(../img/svg/habrahabr.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.social-links__link--htmlacademy {
+    background-image: url(../img/svg/htmlacademy.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.social-links__item a.social-links__link--codewars {
+    background-image: url(../img/svg/codewars.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.social-links__link--freecodecump {
+    background-image: url(../img/svg/freecodecump.svg);
+    background-position: center center;
+    background-repeat: no-repeat; 
+}
+
 .social-links__link--mail {
-    font-size: 0;
-    background-image: url(../img/mail.svg);
-    background-position: 57% center;
+    background-image: url(../img/svg/mail.svg);
+    background-position: center center;
     background-repeat: no-repeat;
 }
 
@@ -465,14 +494,57 @@ footer {
     display: block;
     width: 45px;
     height: 45px;
-    border: 3px solid #bec2c7;
+    border: 2px solid #fff;
     border-radius: 5%;
 }
 
-.social-links__link:hover {
-    border-color: #fff;
-    transition: 0.3s;
+.social-links__link::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,.2);
+    border-radius: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
 }
+
+.social-links__link:hover::before {
+    -webkit-animation: circle .75s;
+    animation: circle .75s;
+}
+@-webkit-keyframes circle {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+@keyframes circle {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+
 
 .social-links__link:active {
     opacity: 0.5; 
