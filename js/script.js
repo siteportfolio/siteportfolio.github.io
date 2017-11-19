@@ -8,7 +8,7 @@
 
     function initHeader() {
         width = window.innerWidth;
-        height = 0.55*window.innerHeight;
+        height = 0.65*window.innerHeight;
         target = {x: 0, y: height};
 
         largeHeader = document.getElementById('large-header');
@@ -41,7 +41,7 @@
 
     function resize() {
         width = window.innerWidth;
-        height = 0.55*window.innerHeight;
+        height = 0.65*window.innerHeight;
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
